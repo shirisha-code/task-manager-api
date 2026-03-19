@@ -52,8 +52,6 @@ python manage.py runserver
 
 ##  Scalability Notes
 
-## ⚙️ Scalability Notes
-
 * The project follows a modular structure separating accounts and tasks apps.
 * JWT authentication ensures stateless and scalable user sessions.
 * Can be extended into microservices architecture by separating authentication and task services.
