@@ -52,10 +52,15 @@ python manage.py runserver
 
 ##  Scalability Notes
 
-* Can scale using microservices architecture
-* Add Redis caching for performance
-* Use Docker for containerization
-* Load balancing with NGINX
+## ⚙️ Scalability Notes
+
+* The project follows a modular structure separating accounts and tasks apps.
+* JWT authentication ensures stateless and scalable user sessions.
+* Can be extended into microservices architecture by separating authentication and task services.
+* Database can be scaled using PostgreSQL with indexing.
+* Caching (Redis) can be added for frequently accessed data.
+* Load balancing can be applied using Nginx in production.
+
 
 ## Screenshots
 * Authorization
