@@ -25,7 +25,7 @@ schema_view = get_schema_view(
     openapi.Info(
         title="Task Manager API",
         default_version='v1',
-        description="API for managing tasks with JWT authentication",
+        description="API for Task Manager",
     ),
     public=True,
     permission_classes=[permissions.AllowAny],
@@ -36,7 +36,5 @@ urlpatterns = [
     path('api/', include('accounts.urls')),
     path('api/', include('tasks.urls')),
 
-    # Swagger URLs
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0)),
-    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0)),
 ]

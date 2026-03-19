@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from .models import Task
 from .serializers import TaskSerializer
-
+from drf_yasg.utils import swagger_auto_schema
 
 class TaskListCreateView(APIView):
     permission_classes = [IsAuthenticated]
@@ -19,6 +19,7 @@ class TaskListCreateView(APIView):
         return Response(serializer.data)
 
     # POST → create task
+    @swagger_auto_schema(request_body=TaskSerializer)   
     def post(self, request):
         serializer = TaskSerializer(data=request.data)
 
@@ -26,7 +27,6 @@ class TaskListCreateView(APIView):
             serializer.save(user=request.user)
             return Response(serializer.data, status=201)
         return Response(serializer.errors, status=400)
-
 
 class TaskDetailView(APIView):
     permission_classes = [IsAuthenticated]
@@ -44,6 +44,7 @@ class TaskDetailView(APIView):
         return Response(serializer.data)
 
     # UPDATE task
+    @swagger_auto_schema(request_body=TaskSerializer)
     def put(self, request, pk):
         task = self.get_task(request, pk)
         serializer = TaskSerializer(task, data=request.data)

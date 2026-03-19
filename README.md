@@ -57,6 +57,16 @@ python manage.py runserver
 * Use Docker for containerization
 * Load balancing with NGINX
 
-##  Author
+## Screenshots
+* Authorization
+* Frontend
+* login_api
+* login_response
+* register_api
+* register_response
+* tasks_api
+* tasks_response
+* taks_get
 
+##  Author
 Shirisha
